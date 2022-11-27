@@ -5,11 +5,19 @@ body{
     padding: 0px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr 50px;
+    grid-template-rows: 100px 100px 1fr 50px;
 }
 .header{
     display: flex;
     justify-content: center;
+}
+.inputbutton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputbutton>button{
+    padding: 5px;
 }
 .content{
     background-color: rgb(136, 176, 255, 4);

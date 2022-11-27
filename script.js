@@ -1,4 +1,4 @@
-let myLibrary = ["maral", "dirk", "hans"];
+let myLibrary = [{author: "tarzan", title : "The ballad of bear fred", pagenum: 23, readstatus:true}];
 
 function Book(author, title, pagenum, readstatus){
     this.author = author;
@@ -15,7 +15,12 @@ function createCard(){
     for(let i=0; i<myLibrary.length; i++){
         let newCard = document.createElement("div")
         newCard.classList.add("card")
-        newCard.textContent = `This is ${myLibrary[i]}`
+        newCard.textContent = 
+            `This is 
+            ${myLibrary[i].title},
+            ${myLibrary[i].author},
+            ${myLibrary[i].pagenum}
+            ${myLibrary[i].readstatus}`
         content.appendChild(newCard)
-        }
+    }
 }
