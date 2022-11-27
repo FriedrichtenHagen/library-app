@@ -1,5 +1,9 @@
 let myLibrary = [{author: "tarzan", title : "The ballad of bear fred", pagenum: 23, readstatus:true}];
 
+const addbutton = document.querySelector(".inputbutton>button")
+                            .addEventListener("click", displayInput);
+const inputForm = document.querySelector(".inputForm");
+
 function Book(author, title, pagenum, readstatus){
     this.author = author;
     this.title = title;
@@ -23,4 +27,7 @@ function createCard(){
             ${myLibrary[i].readstatus}`
         content.appendChild(newCard)
     }
+}
+function displayInput(){
+    inputForm.classList.toggle("active")
 }

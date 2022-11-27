@@ -19,6 +19,21 @@ body{
 .inputbutton>button{
     padding: 5px;
 }
+.inputForm{
+    position: absolute;
+    z-index: 1;
+    transform: scale(1, 0);
+    height: 200px;
+    width: 200px;
+    top: 35%;
+    left: 50%;
+    background-color: beige;
+    text-align: center;
+}
+.active{
+    transform: scale(1, 1);
+    transition: 0.2s ease-in-out;
+}
 .content{
     background-color: rgb(136, 176, 255, 4);
     margin: 5px;
