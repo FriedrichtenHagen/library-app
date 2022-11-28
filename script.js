@@ -1,14 +1,14 @@
 let myLibrary = [{author: "tarzan", title : "The ballad of bear fred", pagenum: 23, readstatus:true}];
 
-const addbutton = document.querySelector(".inputbutton>button")
+const addButton = document.querySelector(".inputButton>button")
                             .addEventListener("click", displayInput);
 const inputForm = document.querySelector(".inputForm");
 
-function Book(author, title, pagenum, readstatus){
+function Book(author, title, pageNum, readStatus){
     this.author = author;
     this.title = title;
-    this.pagenum = pagenum; 
-    this.readstatus = readstatus;
+    this.pageNum = pageNum; 
+    this.readStatus = readStatus;
 }
 
 function addBookToLibrary(newBook){
@@ -23,8 +23,8 @@ function createCard(){
             `This is 
             ${myLibrary[i].title},
             ${myLibrary[i].author},
-            ${myLibrary[i].pagenum}
-            ${myLibrary[i].readstatus}`
+            ${myLibrary[i].pageNum}
+            ${myLibrary[i].readStatus}`
         content.appendChild(newCard)
     }
 }
