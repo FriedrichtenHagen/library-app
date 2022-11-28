@@ -11,6 +11,9 @@ body{
     display: flex;
     justify-content: center;
 }
+.inputButton:hover {
+    filter: brightness(90%);
+}
 .inputButton{
     display: flex;
     justify-content: center;

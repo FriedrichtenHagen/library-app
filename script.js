@@ -31,3 +31,11 @@ function createCard(){
 function displayInput(){
     inputForm.classList.toggle("active")
 }
+
+// add event listener to submit (prevent default)
+// get content of input fields
+// create new book object
+// push object to array
+// createCard()
+
+// add buttons to Card for deleting and changing read status
