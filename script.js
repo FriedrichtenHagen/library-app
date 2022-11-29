@@ -1,8 +1,14 @@
 let myLibrary = [{author: "tarzan", title : "The ballad of bear fred", pagenum: 23, readstatus:true}];
 
+// querySelectors
 const addButton = document.querySelector(".inputButton>button")
                             .addEventListener("click", displayInput);
 const inputForm = document.querySelector(".inputForm");
+const submitButton = document.querySelector("button[type]")
+const form = document.querySelector("form")
+// eventlisteners
+form.addEventListener("submit", e => {e.preventDefault(); alert("maral!")})
+
 
 function Book(author, title, pageNum, readStatus){
     this.author = author;

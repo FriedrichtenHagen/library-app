@@ -25,7 +25,7 @@ body{
 .inputForm{
     position: absolute;
     z-index: 1;
-    transform: scale(1, 0);
+    transform: translate(-50%, -50%) scale(1, 0);
     height: 200px;
     width: 200px;
     top: 35%;
@@ -35,10 +35,12 @@ body{
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: 0.2s ease-in-out;
+  
 }
 .active{
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1) ;
     transition: 0.2s ease-in-out;
+    
 }
 .content{
     background-color: rgb(136, 176, 255, 4);
