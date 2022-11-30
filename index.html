@@ -21,16 +21,27 @@
             Add new book:
         </div>
         <form action="/postToimaginaryBackend.php" name="">
-            <label for="author">Author:</label>
-                <input type="text" id="author">
-            <label for="author">Title:</label>
-                <input type="text" id="title">
-            <label for="author">Page Number:</label>
-                <input type="text" id="pageNum">
-            <label for="readStatus">Have you read it?</label>
-                <input type="checkBox" name="readStatus" id="readStatus">
-            <label for="readStatus">Have you read it?</label>
-                <button type="submit">Save</button>
+            <ul>
+                <li>
+                    <label for="author">Author:</label>
+                        <input type="text" id="author">
+                </li>
+                <li>
+                    <label for="author">Title:</label>
+                        <input type="text" id="title">
+                </li>
+                <li>
+                    <label for="author">Page Number:</label>
+                        <input type="text" id="pageNum">
+                </li>
+                <li>
+                    <label for="readStatus">Have you read it?</label>
+                        <input type="checkBox" name="readStatus" id="readStatus">
+                </li>
+                <li id="submitButton">
+                        <button type="submit">Save</button>
+                </li>
+            </ul>
         </form>
     </div>
     <div class="inputScreen"></div>

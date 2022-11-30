@@ -40,8 +40,8 @@ body{
     position: absolute;
     z-index: 1;
     transform: translate(-50%, -50%) scale(1, 0);
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
     top: 35%;
     left: 50%;
     background-color: var(--box-color);
@@ -49,12 +49,37 @@ body{
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: 0.2s ease-in-out;
+    padding: 5px;
   
 }
 .inputForm.active{
     transform: translate(-50%, -50%) scale(1) ;
     transition: 0.2s ease-in-out;
 }
+.inputHeader{
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+li#submitButton{
+    display: flex;
+    justify-content: center;
+}
+input{
+    max-width: 150px;
+}
+
+
 .content{
     background-color: rgb(136, 176, 255, 4);
     margin: 5px;
