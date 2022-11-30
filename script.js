@@ -33,17 +33,15 @@ function addBookToLibrary(newBook){
 }
 const content = document.querySelector(".content")
 function createCard(){
-    for(let i=0; i<myLibrary.length; i++){
-        let newCard = document.createElement("div")
-        newCard.classList.add("card")
-        newCard.textContent = 
-            `This is 
-            ${myLibrary[i].title},
-            ${myLibrary[i].author},
-            ${myLibrary[i].pageNum}
-            ${myLibrary[i].readStatus}`
-        content.appendChild(newCard)
-    }
+    let newCard = document.createElement("div")
+    newCard.classList.add("card")
+    newCard.textContent = 
+        `This is 
+        ${myLibrary[myLibrary.length-1].title},
+        ${myLibrary[myLibrary.length-1].author},
+        ${myLibrary[myLibrary.length-1].pageNum}
+        ${myLibrary[myLibrary.length-1].readStatus}`
+    content.appendChild(newCard)
 }
 function displayInput(){
     inputForm.classList.toggle("active")
