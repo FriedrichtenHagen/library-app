@@ -4,19 +4,25 @@ let myLibrary = [{author: "tarzan", title : "The ballad of bear fred", pagenum: 
 const addButton = document.querySelector(".inputButton>button")
                             .addEventListener("click", displayInput);
 const inputForm = document.querySelector(".inputForm");
-const submitButton = document.querySelector("button[type]")
+
+// form and inputs
 const form = document.querySelector("form")
+const authorInput = document.querySelector("#author")
+const titleInput = document.querySelector("#title")
+const pageNumInput = document.querySelector("#pageNum")
+const readStatusInput = document.querySelector("#readStatus")
+const submitButton = document.querySelector("button[type]")
 // eventlisteners
 form.addEventListener("submit", e => {e.preventDefault(); alert("maral!")})
 
-
+// create book object
 function Book(author, title, pageNum, readStatus){
     this.author = author;
     this.title = title;
     this.pageNum = pageNum; 
     this.readStatus = readStatus;
 }
-
+// push to library array
 function addBookToLibrary(newBook){
     myLibrary.push(newBook)
 }
@@ -40,7 +46,15 @@ function displayInput(){
 
 // add event listener to submit (prevent default)
 // get content of input fields
-// create new book object
+function acceptInput(){
+    let author = asdfasd
+
+    let newBook = new Book(author, title, pageNum, readStatus)
+    addBookToLibrary(newBook);
+}
+
+
+// Create new book object
 // push object to array
 // createCard()
 
