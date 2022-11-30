@@ -7,13 +7,18 @@ const inputForm = document.querySelector(".inputForm");
 
 // form and inputs
 const form = document.querySelector("form")
-const authorInput = document.querySelector("#author")
 const titleInput = document.querySelector("#title")
+const authorInput = document.querySelector("#author")
 const pageNumInput = document.querySelector("#pageNum")
 const readStatusInput = document.querySelector("#readStatus")
 const submitButton = document.querySelector("button[type]")
 // eventlisteners
-form.addEventListener("submit", e => {e.preventDefault(); alert("maral!")})
+// add event listener to submit (prevent default)
+form.addEventListener("submit", e => {
+    e.preventDefault(); 
+    acceptInput();
+    createCard();
+})
 
 // create book object
 function Book(author, title, pageNum, readStatus){
@@ -44,11 +49,13 @@ function displayInput(){
     inputForm.classList.toggle("active")
 }
 
-// add event listener to submit (prevent default)
+
 // get content of input fields
 function acceptInput(){
-    let author = asdfasd
-
+    let title = titleInput.value
+    let author = authorInput.value
+    let pageNum = pageNumInput.value
+    let readStatus = readStatusInput.value
     let newBook = new Book(author, title, pageNum, readStatus)
     addBookToLibrary(newBook);
 }
