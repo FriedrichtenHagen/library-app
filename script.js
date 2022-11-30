@@ -4,6 +4,8 @@ let myLibrary = [{author: "tarzan", title : "The ballad of bear fred", pagenum: 
 const addButton = document.querySelector(".inputButton>button")
                             .addEventListener("click", displayInput);
 const inputForm = document.querySelector(".inputForm");
+const inputScreen = document.querySelector(".inputScreen");
+inputScreen.addEventListener("click", displayInput);
 
 // form and inputs
 const form = document.querySelector("form")
@@ -45,6 +47,8 @@ function createCard(){
 }
 function displayInput(){
     inputForm.classList.toggle("active")
+    inputScreen.classList.toggle("active")
+
 }
 
 
