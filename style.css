@@ -1,3 +1,6 @@
+:root{
+    --box-color: beige;
+}
 body{
     width: 100vw;
     height: 100vh;
@@ -41,7 +44,7 @@ body{
     width: 200px;
     top: 35%;
     left: 50%;
-    background-color: beige;
+    background-color: var(--box-color);
     text-align: center;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -62,7 +65,7 @@ body{
 .card{
     width: 100px;
     height: 100px;
-    background-color: darkkhaki;
+    background-color: var(--box-color);
     margin: 5px;
     padding: 10px;
     border-radius: 5px;

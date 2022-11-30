@@ -38,11 +38,10 @@ function createCard(){
     let newCard = document.createElement("div")
     newCard.classList.add("card")
     newCard.textContent = 
-        `This is 
-        ${myLibrary[myLibrary.length-1].title},
-        ${myLibrary[myLibrary.length-1].author},
-        ${myLibrary[myLibrary.length-1].pageNum}
-        ${myLibrary[myLibrary.length-1].readStatus}`
+        `Title: ${myLibrary[myLibrary.length-1].title}
+        Author: ${myLibrary[myLibrary.length-1].author}
+        Pages: ${myLibrary[myLibrary.length-1].pageNum}
+        Read? ${myLibrary[myLibrary.length-1].readStatus}`
     content.appendChild(newCard)
 }
 function displayInput(){
