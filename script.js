@@ -111,5 +111,5 @@ function acceptInput(){
 
 
 
-
-// add buttons to Card for deleting
+// placeholder problem on remove of card
+    // maybe reasign all data-libindex?
