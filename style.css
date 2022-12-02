@@ -96,6 +96,10 @@ input{
     border-radius: 5px;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    word-break: break-word;
 }
 .card>*{
     margin: 1px;

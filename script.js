@@ -113,3 +113,7 @@ function acceptInput(){
 
 // placeholder problem on remove of card
     // maybe reasign all data-libindex?
+// sort by pagenumber etc
+// add input limitations (min character, just numbers etc) 
+// work on css
+// create grid for new books
