@@ -83,7 +83,7 @@ function acceptInput(){
     let title = titleInput.value
     let author = authorInput.value
     let pageNum = pageNumInput.value
-    let readStatus = readStatusInput.value
+    let readStatus = readStatusInput.checked 
     let newBook = new Book(author, title, pageNum, readStatus)
     addBookToLibrary(newBook);
 }

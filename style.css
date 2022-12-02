@@ -94,6 +94,7 @@ input{
     margin: 5px;
     padding: 10px;
     border-radius: 5px;
+    text-align: center;
 }
 .card>*{
     margin: 1px;
