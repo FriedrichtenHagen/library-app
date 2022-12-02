@@ -1,4 +1,4 @@
-let myLibrary = [{author: "tarzan", title : "The ballad of bear fred", pagenum: 23, readstatus:true}];
+let myLibrary = [];
 
 // querySelectors
 const addButton = document.querySelector(".inputButton>button")
@@ -40,6 +40,7 @@ function addBookToLibrary(newBook){
 function createCard(){
     let newCard = document.createElement("div")
     newCard.classList.add("card")
+    newCard.setAttribute("data-libindex", `${myLibrary.length-2}`)
 
     let titleP = document.createElement("p")
     titleP.textContent = `${myLibrary[myLibrary.length-1].title}`
@@ -59,9 +60,26 @@ function createCard(){
         readStatusB.textContent = "Read"
     }
     else{
-        readStatusB.classList.add("falseRed")
         readStatusB.textContent = "Unread"
     }
+
+    readStatusB.addEventListener("click", e => {
+        readStatusB.classList.toggle("trueGreen")
+        
+        //toggle the readStatus in object?
+        
+        if(myLibrary[`${newCard.dataset.libindex}`].readStatus){
+            myLibrary[`${newCard.dataset.libindex}`].readStatus = false
+            readStatusB.textContent = "Unread"
+        }
+        else{
+            myLibrary[`${newCard.dataset.libindex}`].readStatus = true
+            readStatusB.textContent = "Read"
+        }
+            
+
+    })
+
     newCard.appendChild(readStatusB)
 
     let removeB = document.createElement("button")
