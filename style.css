@@ -99,9 +99,9 @@ input{
 .card>*{
     margin: 1px;
 }
+.readButton{
+    background-color: red;
+}
 .trueGreen{
     background-color: green;
-}
-.falseRed{
-    background-color: red;
 }

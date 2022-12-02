@@ -40,7 +40,7 @@ function addBookToLibrary(newBook){
 function createCard(){
     let newCard = document.createElement("div")
     newCard.classList.add("card")
-    newCard.setAttribute("data-libindex", `${myLibrary.length-2}`)
+    newCard.setAttribute("data-libindex", `${myLibrary.length-1}`)
 
     let titleP = document.createElement("p")
     titleP.textContent = `${myLibrary[myLibrary.length-1].title}`
@@ -55,6 +55,7 @@ function createCard(){
     newCard.appendChild(pageNumP)
 
     let readStatusB = document.createElement("button")
+    readStatusB.classList.add("readButton")
     if(myLibrary[myLibrary.length-1].readStatus){
         readStatusB.classList.add("trueGreen")
         readStatusB.textContent = "Read"
