@@ -14,6 +14,8 @@ const authorInput = document.querySelector("#author")
 const pageNumInput = document.querySelector("#pageNum")
 const readStatusInput = document.querySelector("#readStatus")
 const submitButton = document.querySelector("button[type]")
+const content = document.querySelector(".content")
+
 // eventlisteners
 // add event listener to submit (prevent default)
 form.addEventListener("submit", e => {
@@ -33,15 +35,40 @@ function Book(author, title, pageNum, readStatus){
 function addBookToLibrary(newBook){
     myLibrary.push(newBook)
 }
-const content = document.querySelector(".content")
+
+
 function createCard(){
     let newCard = document.createElement("div")
     newCard.classList.add("card")
-    newCard.textContent = 
-        `Title: ${myLibrary[myLibrary.length-1].title}
-        Author: ${myLibrary[myLibrary.length-1].author}
-        Pages: ${myLibrary[myLibrary.length-1].pageNum}
-        Read? ${myLibrary[myLibrary.length-1].readStatus}`
+
+    let titleP = document.createElement("p")
+    titleP.textContent = `${myLibrary[myLibrary.length-1].title}`
+    newCard.appendChild(titleP)
+
+    let authorP = document.createElement("p")
+    authorP.textContent = `${myLibrary[myLibrary.length-1].author}`
+    newCard.appendChild(authorP)
+
+    let pageNumP = document.createElement("p")
+    pageNumP.textContent = `${myLibrary[myLibrary.length-1].pageNum}`
+    newCard.appendChild(pageNumP)
+
+    let readStatusB = document.createElement("button")
+    if(myLibrary[myLibrary.length-1].readStatus){
+        readStatusB.classList.add("trueGreen")
+        readStatusB.textContent = "Read"
+    }
+    else{
+        readStatusB.classList.add("falseRed")
+        readStatusB.textContent = "Unread"
+    }
+    newCard.appendChild(readStatusB)
+
+    let removeB = document.createElement("button")
+    removeB.textContent = "remove"
+    newCard.appendChild(removeB)
+
+ 
     content.appendChild(newCard)
 }
 function displayInput(){
@@ -62,8 +89,7 @@ function acceptInput(){
 }
 
 
-// Create new book object
-// push object to array
-// createCard()
 
+// fix card layout
+// check read status
 // add buttons to Card for deleting and changing read status
