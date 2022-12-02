@@ -67,8 +67,6 @@ function createCard(){
     readStatusB.addEventListener("click", e => {
         readStatusB.classList.toggle("trueGreen")
         
-        //toggle the readStatus in object?
-        
         if(myLibrary[`${newCard.dataset.libindex}`].readStatus){
             myLibrary[`${newCard.dataset.libindex}`].readStatus = false
             readStatusB.textContent = "Unread"
@@ -77,14 +75,18 @@ function createCard(){
             myLibrary[`${newCard.dataset.libindex}`].readStatus = true
             readStatusB.textContent = "Read"
         }
-            
-
     })
-
     newCard.appendChild(readStatusB)
 
     let removeB = document.createElement("button")
     removeB.textContent = "remove"
+    removeB.addEventListener("click", e => {
+        content.removeChild(newCard)
+        //remove book from library
+        myLibrary.splice(`${newCard.dataset.libindex}`, 1, "placeholder")
+    })
+
+
     newCard.appendChild(removeB)
 
  
@@ -109,6 +111,5 @@ function acceptInput(){
 
 
 
-// fix card layout
-// check read status
-// add buttons to Card for deleting and changing read status
+
+// add buttons to Card for deleting
