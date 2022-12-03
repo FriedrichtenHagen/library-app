@@ -25,6 +25,7 @@ body{
 .inputScreen.active{
     display: block;
 }
+
 .inputButton:hover {
     filter: brightness(90%);
 }
@@ -34,14 +35,15 @@ body{
     align-items: center;
 }
 .inputButton>button{
-    padding: 5px;
+    border-radius: 16px;
+    padding: 7px;
 }
 .inputForm{
     position: absolute;
     z-index: 1;
     transform: translate(-50%, -50%) scale(1, 0);
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
     top: 35%;
     left: 50%;
     background-color: var(--box-color);
@@ -67,13 +69,9 @@ ul{
 }
 li{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 5px;
     margin-bottom: 5px;
-}
-li#submitButton{
-    display: flex;
-    justify-content: center;
 }
 input{
     max-width: 150px;
@@ -81,11 +79,12 @@ input{
 
 
 .content{
-    background-color: rgb(136, 176, 255, 4);
-    margin: 5px;
+    background-color: rgba(249, 249, 249, 0.87);
+    margin: 0px;
     border-radius: 20px;
     display: flex;
     flex-wrap: wrap;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .card{
     width: 100px;
@@ -105,8 +104,9 @@ input{
     margin: 1px;
 }
 .readButton{
-    background-color: red;
+    background-color: #ffbcbc;
+    border-radius: 5px;
 }
 .trueGreen{
-    background-color: green;
+    background-color: #c0ffbc;
 }

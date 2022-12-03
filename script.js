@@ -38,6 +38,7 @@ function addBookToLibrary(newBook){
 
 
 function createCard(){
+    // fill in the information on the new card
     let newCard = document.createElement("div")
     newCard.classList.add("card")
     newCard.setAttribute("data-libindex", `${myLibrary.length-1}`)
@@ -56,6 +57,7 @@ function createCard(){
 
     let readStatusB = document.createElement("button")
     readStatusB.classList.add("readButton")
+    // set read status
     if(myLibrary[myLibrary.length-1].readStatus){
         readStatusB.classList.add("trueGreen")
         readStatusB.textContent = "Read"
@@ -63,7 +65,7 @@ function createCard(){
     else{
         readStatusB.textContent = "Unread"
     }
-
+    // toggle read status on click
     readStatusB.addEventListener("click", e => {
         readStatusB.classList.toggle("trueGreen")
         
@@ -78,26 +80,30 @@ function createCard(){
     })
     newCard.appendChild(readStatusB)
 
+    // remove card from field and object from array
     let removeB = document.createElement("button")
     removeB.textContent = "remove"
     removeB.addEventListener("click", e => {
         content.removeChild(newCard)
         //remove book from library
-        myLibrary.splice(`${newCard.dataset.libindex}`, 1, "placeholder")
+        myLibrary.splice(`${newCard.dataset.libindex}`, 1)
+
+        // reassign newCard.dataset.libindex
+        const cardNodeList = document.querySelectorAll(".card")
+
+        for(let i=0; i<myLibrary.length; i++){
+            cardNodeList[i].setAttribute("data-libindex", `${i}`)
+        }
     })
-
-
     newCard.appendChild(removeB)
 
- 
+    // add card to grid
     content.appendChild(newCard)
 }
 function displayInput(){
     inputForm.classList.toggle("active")
     inputScreen.classList.toggle("active")
-
 }
-
 
 // get content of input fields
 function acceptInput(){
@@ -111,8 +117,6 @@ function acceptInput(){
 
 
 
-// placeholder problem on remove of card
-    // maybe reasign all data-libindex?
 // sort by pagenumber etc
 // add input limitations (min character, just numbers etc) 
 // work on css
