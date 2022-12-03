@@ -23,16 +23,13 @@
         <form action="/postToimaginaryBackend.php" name="">
             <ul>
                 <li>
-                    <label for="author">Author:</label>
-                        <input type="text" id="author" minlength="2">
+                    <input type="text" id="author" placeholder= "Author" minlength="2">
                 </li>
                 <li>
-                    <label for="author">Title:</label>
-                        <input type="text" id="title" minlength="2">
+                    <input type="text" id="title" placeholder= "Title" minlength="2">
                 </li>
                 <li>
-                    <label for="author">Page Number:</label>
-                        <input type="text" id="pageNum">
+                    <input type="text" id="pageNum" placeholder= "Pages" pattern="[0-9]*$" maxlength="5" >
                 </li>
                 <li>
                     <label for="readStatus">Have you read it?</label>
