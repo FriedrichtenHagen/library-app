@@ -96,13 +96,14 @@ li>button:hover {
     margin: 0px;
     padding: 5px;
     border-radius: 20px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    grid-auto-columns: 1fr;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 5px;
 }
 .card{
-    width: 100px;
-    height: 100px;
+    max-width: 200px;
     background-color: var(--box-color);
     margin: 5px;
     padding: 10px;
