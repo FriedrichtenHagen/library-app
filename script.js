@@ -118,7 +118,22 @@ function acceptInput(){
 
 
 
-// sort by pagenumber etc
+// sort by pagenumber
+function sortByPageNumAsc(){
+    return myLibrary.sort((a, b) => a.pageNum - b.pageNum)
+}
+function sortByPageNumDes(){
+    return myLibrary.sort((a, b) => b.pageNum - a.pageNum)
+}
+// sort by read status
+function sortByReadStatusTrue(){
+    return myLibrary.sort((a, b) => b.readStatus - a.readStatus)
+}
+function sortByReadStatusFalse(){
+    return myLibrary.sort((a, b) => a.readStatus - b.readStatus)
+}
+
+
 // add input limitations (min character, just numbers etc) 
 // work on css
 // create grid for new books
