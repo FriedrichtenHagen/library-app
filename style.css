@@ -94,6 +94,7 @@ li>button:hover {
 .content{
     background-color: rgba(249, 249, 249, 0.87);
     margin: 0px;
+    padding: 5px;
     border-radius: 20px;
     display: flex;
     flex-wrap: wrap;
