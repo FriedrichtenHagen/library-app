@@ -19,6 +19,10 @@ button{
     cursor: pointer;
     outline: none;
 }
+button:hover{
+    filter: brightness(90%);
+}
+
 .inputScreen{
     background-color: black;
     width: 100%;
@@ -80,15 +84,20 @@ li{
 input{
     max-width: 150px;
 }
-
-
+li>button{
+    border-radius: 13px;
+    padding: 8px;
+}
+li>button:hover {
+    filter: brightness(90%);
+}
 .content{
     background-color: rgba(249, 249, 249, 0.87);
     margin: 0px;
     border-radius: 20px;
     display: flex;
     flex-wrap: wrap;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 5px;
 }
 .card{
     width: 100px;
@@ -98,7 +107,7 @@ input{
     padding: 10px;
     border-radius: 5px;
     text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgb(0 0 0 / 35%) 0px 1px 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -109,6 +118,9 @@ input{
 }
 .readButton{
     background-color: #ffbcbc;
+    border-radius: 5px;
+}
+.removeButton{
     border-radius: 5px;
 }
 .trueGreen{

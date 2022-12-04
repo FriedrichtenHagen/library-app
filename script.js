@@ -83,6 +83,7 @@ function createCard(){
     // remove card from field and object from array
     let removeB = document.createElement("button")
     removeB.textContent = "remove"
+    removeB.classList.add("removeButton")
     removeB.addEventListener("click", e => {
         content.removeChild(newCard)
         //remove book from library
