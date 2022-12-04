@@ -1,8 +1,14 @@
 let myLibrary = [];
 
 // querySelectors
-const addButton = document.querySelector(".inputButton>button")
+const addButton = document.querySelector(".inputButton>button.add")
                             .addEventListener("click", displayInput);
+const sortButton = document.querySelector(".inputButton>button.sort")
+sortButton.addEventListener("click", e => {
+                                clearAllCards()
+                                sortByReadStatusFalse()
+                                repopulateCards(myLibrary)
+                            });
 const inputForm = document.querySelector(".inputForm");
 const inputScreen = document.querySelector(".inputScreen");
 inputScreen.addEventListener("click", displayInput);
@@ -120,20 +126,96 @@ function acceptInput(){
 
 // sort by pagenumber
 function sortByPageNumAsc(){
-    return myLibrary.sort((a, b) => a.pageNum - b.pageNum)
+    myLibrary = myLibrary.sort((a, b) => a.pageNum - b.pageNum)
 }
 function sortByPageNumDes(){
-    return myLibrary.sort((a, b) => b.pageNum - a.pageNum)
+    myLibrary = myLibrary.sort((a, b) => b.pageNum - a.pageNum)
 }
 // sort by read status
 function sortByReadStatusTrue(){
-    return myLibrary.sort((a, b) => b.readStatus - a.readStatus)
+    myLibrary = myLibrary.sort((a, b) => b.readStatus - a.readStatus)
 }
 function sortByReadStatusFalse(){
-    return myLibrary.sort((a, b) => a.readStatus - b.readStatus)
+    myLibrary = myLibrary.sort((a, b) => a.readStatus - b.readStatus)
+}
+// function that removes all cards from DOM (not from myLibrary)
+function clearAllCards(){
+    while (content.firstChild) {
+        content.removeChild(content.lastChild);
+    }
 }
 
 
+// function that rearranges them according the sorted array
+function repopulateCards(sortedLib){
+    for(let i=0; i<sortedLib.length; i++){
+        // fill in the information on the new card
+        let newCard = document.createElement("div")
+        newCard.classList.add("card")
+        newCard.setAttribute("data-libindex", `${i}`)
+
+        let titleP = document.createElement("p")
+        titleP.textContent = `${sortedLib[i].title}`
+        newCard.appendChild(titleP)
+
+        let authorP = document.createElement("p")
+        authorP.textContent = `${sortedLib[i].author}`
+        newCard.appendChild(authorP)
+
+        let pageNumP = document.createElement("p")
+        pageNumP.textContent = `${sortedLib[i].pageNum}`
+        newCard.appendChild(pageNumP)
+
+        let readStatusB = document.createElement("button")
+        readStatusB.classList.add("readButton")
+        // set read status
+        if(sortedLib[i].readStatus){
+            readStatusB.classList.add("trueGreen")
+            readStatusB.textContent = "Read"
+        }
+        else{
+            readStatusB.textContent = "Unread"
+        }
+        // toggle read status on click
+        readStatusB.addEventListener("click", e => {
+            readStatusB.classList.toggle("trueGreen")
+            
+            if(myLibrary[`${newCard.dataset.libindex}`].readStatus){
+                myLibrary[`${newCard.dataset.libindex}`].readStatus = false
+                readStatusB.textContent = "Unread"
+            }
+            else{
+                myLibrary[`${newCard.dataset.libindex}`].readStatus = true
+                readStatusB.textContent = "Read"
+            }
+        })
+        newCard.appendChild(readStatusB)
+
+        // remove card from field and object from array
+        let removeB = document.createElement("button")
+        removeB.textContent = "remove"
+        removeB.classList.add("removeButton")
+        removeB.addEventListener("click", e => {
+            content.removeChild(newCard)
+            //remove book from library
+            myLibrary.splice(`${newCard.dataset.libindex}`, 1)
+
+            // reassign newCard.dataset.libindex
+            const cardNodeList = document.querySelectorAll(".card")
+
+            for(let i=0; i<myLibrary.length; i++){
+                cardNodeList[i].setAttribute("data-libindex", `${i}`)
+            }
+        })
+        newCard.appendChild(removeB)
+
+        // add card to grid
+        content.appendChild(newCard)
+    }
+}
+
+
+// create a input select to access different sort functions
 // add input limitations (min character, just numbers etc) 
 // work on css
 // create grid for new books
