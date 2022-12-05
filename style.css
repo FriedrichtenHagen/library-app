@@ -98,12 +98,17 @@ li>button:hover {
     border-radius: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     gap: 5px;
     grid-auto-columns: 1fr;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 5px;
 }
+@media only screen and (max-width: 900px){
+    .content{
+        grid-template-columns: 1fr 1fr;
+    }
+}
 .card{
-    max-width: 200px;
     background-color: var(--box-color);
     margin: 5px;
     padding: 10px;
