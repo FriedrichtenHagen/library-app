@@ -219,3 +219,13 @@ function repopulateCards(sortedLib){
 // add input limitations (min character, just numbers etc) 
 // work on css
 // create grid for new books
+
+
+
+// factory function
+const factoryfunc = (namer, age) => {
+    const add = () => console.log(namer+age) 
+    const sayHello = () => console.log("hello")
+    const maral = "murul"
+    return {namer, age, sayHello, add}
+}
