@@ -236,3 +236,18 @@ const friedModule = (function(){
     const age = () => alert("marul")
     return {age}
 })();
+
+// factory function with inheritance
+
+const factory1 = function(type){
+    const honk = () => alert("hooooonk!");
+    return {type, honk}
+}
+const audi = factory1("pkw")
+// here comes the inheritance part
+const scooter = () => {
+    const scuut = "SCOOOOOOT"
+    const {honk} = factory1() // allows you to pick and choose the functions of other objects, avoiding the banana-gorilla problem
+    return {scuut, honk}
+}
+
