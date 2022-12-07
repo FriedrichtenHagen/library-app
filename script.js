@@ -229,3 +229,10 @@ const factoryfunc = (namer, age) => {
     const maral = "murul"
     return {namer, age, sayHello, add}
 }
+
+
+// module
+const friedModule = (function(){
+    const age = () => alert("marul")
+    return {age}
+})();
