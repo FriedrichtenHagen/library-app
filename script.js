@@ -31,11 +31,13 @@ form.addEventListener("submit", e => {
 })
 
 // create book object
-function Book(author, title, pageNum, readStatus){
-    this.author = author;
-    this.title = title;
-    this.pageNum = pageNum; 
-    this.readStatus = readStatus;
+class Book{
+    constructor(author, title, pageNum, readStatus){
+        this.author = author;
+        this.title = title;
+        this.pageNum = pageNum; 
+        this.readStatus = readStatus;
+    }
 }
 // push to library array
 function addBookToLibrary(newBook){
@@ -91,6 +93,7 @@ function createCard(){
     removeB.textContent = "remove"
     removeB.classList.add("removeButton")
     removeB.addEventListener("click", e => {
+        alert(this)
         content.removeChild(newCard)
         //remove book from library
         myLibrary.splice(`${newCard.dataset.libindex}`, 1)
@@ -251,3 +254,14 @@ const scooter = () => {
     return {scuut, honk}
 }
 
+// use class in js
+class human {
+    // constructor method is automatically called by new
+    constructor(name){
+        this.name = name
+    }
+    // other methods need to be called explicitaly
+    method1(){alert("classalert")}
+}
+
+let frodo = new human("frodo");
