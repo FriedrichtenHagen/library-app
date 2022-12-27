@@ -93,7 +93,6 @@ function createCard(){
     removeB.textContent = "remove"
     removeB.classList.add("removeButton")
     removeB.addEventListener("click", e => {
-        alert(this)
         content.removeChild(newCard)
         //remove book from library
         myLibrary.splice(`${newCard.dataset.libindex}`, 1)
